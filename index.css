@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+      background-color: floralwhite;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+
+.red{
+  color: red;
+  font-size:12px;
+}
+#calc
+{
+  background-color:powderblue;
+  padding: 5px 0px;
+  margin: 0px;
+  text-align: center;
+  display:inline-block;
+  width:15%;
+}
+#arrow{
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  position: fixed;
+  bottom:20px;
+  left:5%;
+  display: none;
+}
+input[type=text], select, input[type=number],input[type=date]
+{
+  width: 95%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+textarea, input[type=tel]
+{
+  width: 95%;
+  padding: 5px;
+  margin-bottom: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  font-size: 16px;
+}
+
+.fa-plus-square
+{
+  color:deepskyblue;
+  vertical-align: bottom;
+}
+.fa-minus-square{
+  color:red;
+  margin-left:3px;
+  vertical-align: bottom;
+}
+input[type=file]{
+  width: 95%;
+  padding: 5px;
+  border-radius: 4px;
+}
+fieldset{
+  margin-top: 10px;
+}
+.fa-refresh
+{
+	color: blue;
+}
+#captcha{
+  width:60%;
+  margin: 0px;
+}
+label 
+{
+  padding: 5px 0px 12px 0;
+  display: inline-block;
+}
+.required
+{
+  color: red;
+  font-size: 18px;
+}
+/*colors:blueviolet,darkviolet,darkorchid,cyan,#39ff14;#bd3bfd*/
+input[type=submit] 
+{
+  background-color:#c654fe;
+  color: white;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color:darkorchid;
+}
+
+.head{
+  position: relative;
+  text-align: center;
+}
+legend
+{
+  font-size: 25px;
+  font-family: "Garamond" "Times New Roman" serif;
+}
+.container {
+  border-radius:10px;
+  width:50%;
+  padding: 2%;
+  background-color: white;
+  margin:auto;
+  box-shadow:0px 0px 6px #111111;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .col-25, .col-75,#pass_ver {
+    width: 100%;
+  }
+  legend{
+    font-size: 26px;
+  }
+  .container{
+    width: 80%;
+  }
+  #arrow{
+  	width:8vw;
+  	height: 8vw;
+  	left:3%;
+  }
+   input[type=submit]{
+   	width: 100%;
+    margin-top:10px;
+   }
+}

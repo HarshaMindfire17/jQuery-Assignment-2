@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="index.css"><!--src="<%=Url.Content("~/Scripts/jquery-1.4.1.js")%>"-->
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
+  <script type = "text/javascript" src ="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js" language = "javascript"></script>
+
+</head>
+<body onload="callCaptcha()">
+  <h1 class="head">
+    Employee Profile Form
+  </h1>
+  <div class="container"> 
+  <form name="fillit" action="display.php" method="post" target="_blank" onsubmit="return validate()" enctype="multipart/form-data">
+  	<fieldset>
+	  	<legend>Basic Info</legend>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="first_name">First Name</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="text" id="first_name" name="fname">
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="middle_name">Middle Name</label>
+	      </div>
+	      <div class="col-75">
+	        <input type="text" id="middle_name" name="mname">
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="last_name">Last Name</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="text" id="last_name" name="lname">
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="DOB">Date of Birth</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="date" id="DOB" name="DOB" required>
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="photo">Upload photo</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="file" id="photo" name="photo" accept="image/*" >
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="pan">PAN Number</label>
+	      </div>
+	      <div class="col-75">
+	        <input type="text" id="pan" name="pan">
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="aadhar">Aadhar Number</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="number" id="aadhar" name="aadhar">
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="gender">Gender</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="radio" id="male" name="gender" value="male" required>
+	        <label for="male">Male</label>
+	        <input type="radio" id="female" name="gender" value="female">
+	        <label for="female">Female</label>
+	        <input type="radio" id="other" name="gender" value="other">
+	        <label for="other">Other</label>
+	      </div>
+	    </div>
+	</fieldset>
+	<p></p>
+	<fieldset>
+		<legend>Contact Info</legend>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="email_id">Email id</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="text" id="email_id" name="email">
+	      </div>
+	    </div>
+	    
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="mobile_no">Phone No.</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75 contactlist">
+	        <input type="tel" id="mobile_no" class="mobile_no" name="phno[]" placeholder="+91 XXXXXXXXXX">
+	        <i class="fa fa-plus-square plus2" aria-hidden="true"></i>
+	      </div>
+	    </div>
+	   
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="address">Current Address</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75 addresslist" >
+	        <textarea id="address" name="curr[]" rows=2></textarea>
+	        <i class="fa fa-plus-square plus1" aria-hidden="true"></i>
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="city">City</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <input type="text" id="city" name="city">
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="state">State</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <select id="state" name="state">
+	        	<option value="">--Select one--</option>
+	        </select>
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="country">Country</label><span class="required">*</span>
+	      </div>
+	      <div class="col-75">
+	        <select id="country" name="country">
+	          <option value="">--Select one--</option><option value="India">India</option>
+	          <option value="USA">U.S.A</option><option value="UK">U.K</option>
+	          <option value="Japan">Japan</option><option value="France">France</option><option value="Russia">Russia</option>    
+	        </select>
+	      </div>
+	    </div>
+	    <div class="row">
+	      <div class="col-25">
+	        <label for="zip">Pincode</label>
+	      </div>
+	      <div class="col-75">
+	        <input type="number" id="zip" name="zip">
+	      </div>
+	    </div>
+    
+	</fieldset>
+    <div class="row">
+      <div class="col-25">
+        <label for="captcha">Enter captcha</label>
+      </div>
+      <div class="col-75">
+        <div id="calc"></div>
+        <input type="text" id="captcha">&nbsp
+        <i class="fa fa-refresh" aria-hidden="true" onclick="callCaptcha()"></i>
+      </div>
+    </div>
+    <div id="recap"></div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<img src="arrow.png" id="arrow">
+</body>
+</html>
